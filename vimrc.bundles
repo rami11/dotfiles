@@ -1,0 +1,16 @@
+call plug#begin('~/.vim/bundle')
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'preservim/nerdtree'
+Plug 'mattn/emmet-vim'
+Plug 'vim-scripts/tComment'
+Plug 'tpope/vim-surround'
+Plug 'wincent/terminus'
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-projectionist'
+Plug 'w0rp/ale'
+Plug 'mhinz/vim-grepper'
+
+call plug#end()

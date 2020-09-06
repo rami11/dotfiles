@@ -1,0 +1,5 @@
+alias kubectl="microk8s.kubectl"
+
+alias path="echo $PATH | tr ':' '\n'"
+alias sl="ls"
+alias mv="mv -i"
