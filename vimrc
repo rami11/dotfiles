@@ -13,6 +13,11 @@ set colorcolumn=+1
 set number
 set numberwidth=5
 
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 " fzf
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 nnoremap <C-p> :<C-u>FZF<CR>
