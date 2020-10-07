@@ -128,5 +128,6 @@ export HISTSIZE=1000
 alias l.='ls -d .* --color=auto'
 alias ll='ls -l --color=auto'
 
+# Local config
+[[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
 # export PS1="\[\033[s\033[0;0H\033[0;41m\033[K\033[1;33m\t\033[0m\033[u\]<\u@\h \W>\$ "
-# export LANG=POSIX
