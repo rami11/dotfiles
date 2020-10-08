@@ -96,6 +96,9 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# Local config
+[[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -129,6 +132,3 @@ alias l.='ls -d .* --color=auto'
 alias ll='ls -l --color=auto'
 
 # export PS1="\[\033[s\033[0;0H\033[0;41m\033[K\033[1;33m\t\033[0m\033[u\]<\u@\h \W>\$ "
-
-# Local config
-[[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
