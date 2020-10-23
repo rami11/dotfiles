@@ -4,6 +4,9 @@ alias kubectl="microk8s.kubectl"
 alias prelude="emacs --with-profile prelude"
 alias rsmacs="emacs --with-profile rsmacs"
 
+# docker
+alias dockerkill="docker ps --all --quiet | xargs docker rm --force"
+
 alias path="echo $PATH | tr ':' '\n'"
 alias sl="ls"
 alias mv="mv -i"
