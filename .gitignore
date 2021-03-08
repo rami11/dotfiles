@@ -1,1 +1,6 @@
+# Log files
 *.log
+
+# Emacs
+emacs.d/*
+!emacs.d/init.el
