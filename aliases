@@ -1,8 +1,8 @@
 alias kubectl="microk8s.kubectl"
 
 # emacs
+alias doom="emacs --with-profile doom"
 alias prelude="emacs --with-profile prelude"
-alias rsmacs="emacs --with-profile rsmacs"
 
 # docker
 alias dockerkill="docker ps --all --quiet | xargs docker rm --force"
