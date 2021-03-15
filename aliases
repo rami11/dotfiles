@@ -8,6 +8,6 @@ alias prelude="emacs --with-profile prelude"
 alias dockerkill="docker ps --all --quiet | xargs docker rm --force"
 
 alias fzf="fzf-slowday.fzf"
-alias path="echo $PATH | tr ':' '\n'"
+alias path='echo $PATH | tr ":" "\n"'
 alias sl="ls"
 alias mv="mv -i"
