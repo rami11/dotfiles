@@ -131,6 +131,7 @@ umask 0002
 # history size to 1000
 export HISTCONTROL=ignoredups
 export HISTSIZE=1000
+export HISTTIMEFORMAT=': %Y-%m-%d_%H:%M:%S; '
 
 # Add some helpful aliases
 alias l.='ls -d .* --color=auto'
