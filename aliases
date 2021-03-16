@@ -11,3 +11,4 @@ alias fzf="fzf-slowday.fzf"
 alias path='echo $PATH | tr ":" "\n"'
 alias sl="ls"
 alias mv="mv -i"
+alias hs='history -a; history -n'
