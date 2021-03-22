@@ -13,3 +13,4 @@ alias sl="ls"
 alias mv="mv -i"
 alias hs='history -a; history -n'
 alias bot='cd $(dirname $(find . | tail -1))'
+alias clr='cd ~/ && clear'
