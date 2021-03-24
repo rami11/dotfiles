@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Backup existing config files if they exist
+# setup.sh: Backup existing config files if they exist
+
 BACKUP_DIR=~/dotfiles.bak
 [ -d $BACKUP_DIR ] || mkdir $BACKUP_DIR
 
@@ -10,6 +11,7 @@ BACKUP_DIR=~/dotfiles.bak
 [ -f ~/.tmux.conf ]     && mv -f ~/.tmux.conf     $BACKUP_DIR
 [ -f ~/.bash_aliases ]  && mv -f ~/.bash_aliases  $BACKUP_DIR
 [ -f ~/.gitconfig ]  	&& mv -f ~/.gitconfig     $BACKUP_DIR
+[ -f ~/.emacs.d ]  	&& mv -f ~/.emacs.d       $BACKUP_DIR
 
 # Remove symbolic links to target files if they exist
 [ -L ~/.bashrc ]        && rm ~/.bashrc
@@ -18,6 +20,7 @@ BACKUP_DIR=~/dotfiles.bak
 [ -L ~/.tmux ]          && rm ~/.tmux.conf
 [ -L ~/.bash_aliases ]  && rm ~/.bash_aliases
 [ -L ~/.gitconfig ]  	&& rm ~/.gitconfig
+[ -L ~/.emacs.d ]  	&& rm ~/.emacs.d
 
 # Symlink config files with target files
 ln -s ~/dotfiles/bashrc         ~/.bashrc
@@ -26,6 +29,7 @@ ln -s ~/dotfiles/vimrc.bundles  ~/.vimrc.bundles
 ln -s ~/dotfiles/tmux.conf      ~/.tmux.conf
 ln -s ~/dotfiles/aliases        ~/.bash_aliases
 ln -s ~/dotfiles/gitconfig      ~/.gitconfig
+ln -s ~/dotfiles/emacs.d        ~/.emacs.d
 
 # Update the shell
 [ -f ~/.bashrc ] && source ~/.bashrc
