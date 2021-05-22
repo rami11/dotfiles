@@ -134,3 +134,7 @@ umask 0002
 # Add some helpful aliases
 alias l.='ls -d .* --color=auto'
 alias ll='ls -l --color=auto'
+
+# Editors
+VISUAL='emacs -nw'
+EDITOR='emacs -nw'
