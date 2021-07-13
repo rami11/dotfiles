@@ -5,6 +5,8 @@
   st = status
   br = branch
   co = checkout
+  ci = commit
   last = log -1
+  logg = 'log --oneline --decorate'
 [include]
   path = ~/.gitconfig_local
