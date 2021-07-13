@@ -10,3 +10,5 @@
   logg = 'log --oneline --decorate'
 [include]
   path = ~/.gitconfig_local
+[advice]
+  ignoredHook = false
