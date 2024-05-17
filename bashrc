@@ -2,10 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
-}
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -16,16 +12,12 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# Ignore duplicates in command history and increase
-# history size to 1000
-export HISTCONTROL=ignoredups
-export HISTSIZE=1000
-export HISTFILESIZE=2000
-
-export HISTTIMEFORMAT=': %Y-%m-%d_%H:%M:%S; '
-
 # append to the history file, don't overwrite it
 shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -65,8 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}[\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\W\[\e[0m\]\[\e[1;33m\]$(parse_git_branch)\[\e[0m\]]\$ '
-    # PS1='${debian_chroot:+($debian_chroot)}[\[\033[s\033[0;0H\033[0;41m\033[K\033[1;33m\t\033[0m\033[u\]\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\W\[\e[0m\]\[\e[1;33m\]$(parse_git_branch)\[\e[0m\]]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -105,9 +96,6 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Local config
-[[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -115,6 +103,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_profile
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -128,13 +120,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Change umask to make directory sharing easier
-umask 0002
-
-# Add some helpful aliases
-alias l.='ls -d .* --color=auto'
-alias ll='ls -l --color=auto'
-
-# Editors
-VISUAL='emacs -nw'
-EDITOR='emacs -nw'
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
